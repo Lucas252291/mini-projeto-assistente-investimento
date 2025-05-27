@@ -11,7 +11,7 @@ reset = "\033[0m"
 
 
 print("SIMULADOR DE INVESTIMENTOS")
-print("Olá, vou te ajudar a simular as possibilidades de investimento")
+print("Oi, vou te ajudar a simular as possibilidades de investimento")
 
 print(f"Pra começar, quero te dizer que as {cor_azul}taxas anuais{reset} que estou utilizando ")
 
