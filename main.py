@@ -112,6 +112,10 @@ elif investimento == "D":
 
 montante = valor * (1 + taxa_rendimento_mensal) ** tempo
 
+lucro_bruto = montante - valor
+valor_ir = lucro_bruto * taxa_ir
+valor_liquido = montante - valor_ir
+
 print("\nTAXAS UTILIZADAS")
 print(f"- Taxa de IR aplicada: {cor_roxo}{taxa_ir * 100:.2f}%{reset}")
 print(f"- Taxa de rendimento anual: {cor_roxo}{taxa_anual:.2f}%{reset}")  
