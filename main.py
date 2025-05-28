@@ -151,3 +151,4 @@ print(f"Se fosse na poupança:..... {cor_verde}R$ {montante_poupanca:.2f}{reset}
 print(f"Correção da inflação:..... {cor_verde}R$ {correcao_inflacao:.2f}{reset}\n")
 
 print("Espero ter ajudado!")
+input("")
