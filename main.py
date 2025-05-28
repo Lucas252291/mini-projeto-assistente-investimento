@@ -128,6 +128,7 @@ print(f"- Rendendo pelo tempo de {cor_azul}{tempo} meses{reset}")
 print(f"- Dedução do IR de...... {cor_roxo}{taxa_ir *100:.2f}%{reset}")
 print(f"{montante}")
 
+#Falta completar os prints de resultados 
 time.sleep(1.5)
 
 
