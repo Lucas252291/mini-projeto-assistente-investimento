@@ -1,6 +1,6 @@
 import time
 
-# Cores ANSI
+
 cor_vermelho = "\033[31m"
 cor_verde = "\033[32m"
 cor_azul = "\033[34m"
@@ -11,7 +11,7 @@ cor_branco = "\033[37m"
 italico = "\033[3m"
 reset = "\033[0m"
 
-# Taxas anuais (ajustadas para bater com o teste)
+# Taxas anuais 
 IPCA = 5.53
 CDI = 14.65
 POUPANCA = 6.0
@@ -88,7 +88,7 @@ else:
     taxa_ir = 0.15
     taxa_anual = CDI
 
-# Cálculo da taxa mensal com alta precisão
+# Cálculo da taxa mensal 
 taxa_mensal = (1 + taxa_anual / 100) ** (1 / 12) - 1
 
 montante = valor * (1 + taxa_mensal) ** tempo
