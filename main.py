@@ -129,6 +129,48 @@ print(f"- Dedução do IR de...... {cor_roxo}{taxa_ir *100:.2f}%{reset}")
 print(f"{montante}")
 
 time.sleep(1.5)
+
+
+
+#Missão 3 --FALTA REVISAR 
+analises = (input(f"\n{italico}Você gostaria de ver algumas análises adicionais (sim/não)?  {reset}"))
+
+if analises.lower() == "sim":
+    print("\nANÁLISES POUPANÇA")
+    print(f"Se você tivesse investido {cor_verde}R$ {valor:.2f}{reset}")
+    print(f"na poupança, ao final dos {cor_azul}{tempo:.2f} meses{reset}")
+    valor_poupanca = valor * (1 + 0.06) ** (tempo / 12)
+    lucro_poupanca = valor_poupanca - valor
+    print(f"o valor resgatado seria.. {cor_verde}R$ {valor_poupanca:.2f}{reset}")
+    print(f"e o lucro total.......... {cor_verde}R$ {lucro_poupanca:.2f}{reset}")
+    print(f"A diferença de lucro é de {cor_verde}R$ {(resgate - valor_poupanca):.2f}{reset}")
+
+    print("\nANÁLISES INFLAÇÃO")
+    inflacao_acumulada = (1 + 0.0553) ** (tempo / 12) - 1
+    valor_corrigido = valor * (1 + 0.0553) ** (tempo / 12)
+    desvalorizacao = 1 - (valor / valor_corrigido) if valor_corrigido != 0 else 0
+
+    if valor_corrigido != 0:
+        resgate_corrigido = resgate / valor_corrigido * valor
+        poupanca_corrigida = valor_poupanca / valor_corrigido * valor
+    else:
+        resgate_corrigido = 0
+        poupanca_corrigida = 0
+
+    print(f"A inflação acumulada foi de......................... {cor_roxo}{inflacao_acumulada*100:.2f}%{reset}")
+    print(f"resultando em uma desvalorização de................. {cor_roxo}{desvalorizacao*100:.2f}%{reset}")
+    print(f"Por exemplo, se você comprava algo por.............. {cor_verde}R$ {valor:.2f}{reset}")
+    print(f"O mesemo item custaria corrigido pela inflacão será. {cor_verde}R$ {valor_corrigido:.2f}{reset}")
+    print(f"O resgate proporcionalmente ao valor corrigido fica  {cor_verde}R$ {resgate_corrigido:.2f}{reset}")
+    print(f"Já na poupança o proporcional a essa correção seria  {cor_verde}R$ {poupanca_corrigida:.2f}{reset}")
+
+print("\nRESUMO")
+print(f"Valor investido:..... {cor_verde}R$ {valor_investido:.2f}{reset}")
+print(f"Valor resgatado:..... {cor_verde}R$ {resgate:.2f}{reset}")
+print(f"Se fosse na poupança: {cor_verde}R$ {poupanca_corrigida:.2f}{reset}")
+print(f"correção pela inflação: {cor_verde}R$ {valor_corrigido:.2f}{reset}")
+
+print(f"\n{italico}Espero ter ajudado!{reset}")
  
 
 
