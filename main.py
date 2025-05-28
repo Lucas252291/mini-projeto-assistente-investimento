@@ -11,6 +11,16 @@ italico = "\033[3m"
 negativo = "\033[7m"
 reset = "\033[0m"
 
+
+IPCA = 5.53
+CDI = 14.65
+POPANCA = 6.00
+
+def taxa_final_investimento_renda_fixa(porcentagemRendaFixa):
+    return CDI * porcentagemRendaFixa
+
+
+
 #Missão 1
 
 print("SIMULADOR DE INVESTIMENTOS")
@@ -18,24 +28,36 @@ print("Olá, vou te ajudar a simular as possibilidades de investimento")
 time.sleep(1.5)
 
 print(f"\nPra começar, quero te dizer que as {cor_azul}taxas anuais{reset} que estou utilizando são: ")
-print(f"{cor_azul}IPCA{reset}(inflação): {cor_roxo}5.53%{reset}")
-print(f"{cor_azul}CDI{reset}(juros):.... {cor_roxo}14.65%{reset}")
-print(f"{cor_azul}Poupança{reset}:...... {cor_roxo}6.00%{reset}")
+time.sleep(1.5)
+print(f"{cor_azul}IPCA{reset}(inflação): {cor_roxo}{IPCA}%{reset}")
+time.sleep(1.5)
+print(f"{cor_azul}CDI{reset}(juros):.... {cor_roxo}{CDI}%{reset}")
+time.sleep(1.5)
+print(f"{cor_azul}Poupança{reset}:...... {cor_roxo}{POPANCA}%{reset}")
 time.sleep(1.5)
 
 valor = float(input(f"\nAgora me informe o valor em reais que você quer investir: R$ "))
+time.sleep(1.5)
 print(f"Ok, registrei o valor do seu investimento.")
-time.sleep(2.0)
-
+time.sleep(1.5)
+taxa_110_porcento = taxa_final_investimento_renda_fixa(1.10)
+taxa_120_porcento = taxa_final_investimento_renda_fixa(1.20)
+taxa_95_porcento = taxa_final_investimento_renda_fixa(0.95)
 print("\nEssas são as opções de investimento que tenho disponíveis para você: ")
-print(f"[A]{cor_azul}CDB{reset} valendo 100% do CDI, taxa final de {cor_roxo}14.65%{reset}")
-print(f"[B]{cor_azul}CDB{reset} valendo 110% do CDI, taxa final de {cor_roxo}16.12%{reset}")
-print(f"[C]{cor_azul}CDB{reset} valendo 120% do CDI, taxa final de {cor_roxo}17.58%{reset}")
-print(f"[D]{cor_azul}LCA{reset} valendo 95% do CDI, taxa final de  {cor_roxo}13.92%{reset}")
+time.sleep(1.5)
+print(f"[A]{cor_azul}CDB{reset} valendo 100% do CDI, taxa final de {cor_roxo}{CDI}%{reset}")
+time.sleep(1.0)
+print(f"[B]{cor_azul}CDB{reset} valendo 110% do CDI, taxa final de {cor_roxo}{taxa_110_porcento:.2f}%{reset}")
+time.sleep(1.0)
+print(f"[C]{cor_azul}CDB{reset} valendo 120% do CDI, taxa final de {cor_roxo}{taxa_120_porcento:.2f}%{reset}")
+time.sleep(1.0)
+print(f"[D]{cor_azul}LCA{reset} valendo 95% do CDI, taxa final de  {cor_roxo}{taxa_95_porcento:.2f}%{reset}")
+time.sleep(1.0)
 print(f"{italico}Obs.: Lembre que o CDB retém IR na fonte, enquanto a LCA não.{reset}")
-time.sleep(1)
+time.sleep(1.0)
 
 investimento = input("\nEscolha a opção de investimento (A, B, C ou D): ").upper()
+time.sleep(1.5)
 print("Ok, registrei sua opção de investimento.\n")
 time.sleep(0.5)
 
